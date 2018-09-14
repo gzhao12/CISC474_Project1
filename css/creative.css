@@ -52,7 +52,7 @@ h6 {
 }
 
 .text-faded {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 section {
@@ -99,6 +99,7 @@ img::-moz-selection {
 }
 
 #mainNav .navbar-brand {
+  font-size: 2rem;
   font-weight: 700;
   text-transform: uppercase;
   color: #F05F40;
