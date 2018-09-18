@@ -43,6 +43,7 @@ h6 {
   font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
+<<<<<<< HEAD
 
 .grid-container {
   display: grid;
@@ -58,6 +59,8 @@ h6 {
   text-align: center;
 }
 
+=======
+>>>>>>> master
 .bg-primary {
   background-color: #F05F40 !important;
 }
