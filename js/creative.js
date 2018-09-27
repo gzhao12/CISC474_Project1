@@ -15,11 +15,7 @@
     }
   });
 
-<<<<<<< HEAD
-	
-=======
 
->>>>>>> 60e2b75c56f35fb4cd61936b124d8844a5f893ab
   // Closes responsive menu when a scroll trigger link is clicked
   $('.js-scroll-trigger').click(function() {
     $('.navbar-collapse').collapse('hide');
