@@ -60,6 +60,41 @@ h1, h2, h3, h4, h5, h6 {
 	text-align: center;
 }
 
+<<<<<<< HEAD
+=======
+.faces {
+  width: 120px;
+  height: 40px;
+  border: 20px medium #FFFFFF;
+  background-color: #00C5FF;
+  margin-top: 20px;
+  display: inline-block;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  -webkit-border-radius: 40;
+  -moz-border-radius: 40;
+  border-radius: 40px;
+}
+
+.faces:hover {
+  background-color: white;
+  color: black;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 5px;
+}
+
+.grid-item {
+  border: solid #282828;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+>>>>>>> 60e2b75c56f35fb4cd61936b124d8844a5f893ab
 
 .bg-primary {
 	background-color: #F05F40 !important;
@@ -113,6 +148,7 @@ img::selection {
 	color: #F05F40;
 	font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
+<<<<<<< HEAD
 #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
 	color: #f05f40;
 }
@@ -169,6 +205,80 @@ img::selection {
 #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:hover,  #mainNav.navbar-shrink .navbar-nav > li.nav-item > a.nav-link:focus:hover {
 	color: #F05F40;
 }
+=======
+
+#mainNav .navbar-brand:focus,
+#mainNav .navbar-brand:hover {
+  color: #f05f40;
+}
+
+#mainNav .navbar-nav>li.nav-item>a.nav-link,
+#mainNav .navbar-nav>li.nav-item>a.nav-link:focus {
+  font-size: .9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #212529;
+}
+
+#mainNav .navbar-nav>li.nav-item>a.nav-link:hover,
+#mainNav .navbar-nav>li.nav-item>a.nav-link:focus:hover {
+  color: #F05F40;
+}
+
+#mainNav .navbar-nav>li.nav-item>a.nav-link.active,
+#mainNav .navbar-nav>li.nav-item>a.nav-link:focus.active {
+  color: #F05F40 !important;
+  background-color: transparent;
+}
+
+#mainNav .navbar-nav>li.nav-item>a.nav-link.active:hover,
+#mainNav .navbar-nav>li.nav-item>a.nav-link:focus.active:hover {
+  background-color: transparent;
+}
+
+@media (min-width: 992px) {
+  #mainNav {
+    border-color: transparent;
+    background-color: transparent;
+  }
+  #mainNav .navbar-brand {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  #mainNav .navbar-brand:focus,
+  #mainNav .navbar-brand:hover {
+    color: #fff;
+  }
+  #mainNav .navbar-nav>li.nav-item>a.nav-link {
+    padding: 0.5rem 1rem;
+  }
+  #mainNav .navbar-nav>li.nav-item>a.nav-link,
+  #mainNav .navbar-nav>li.nav-item>a.nav-link:focus {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  #mainNav .navbar-nav>li.nav-item>a.nav-link:hover,
+  #mainNav .navbar-nav>li.nav-item>a.nav-link:focus:hover {
+    color: #fff;
+  }
+  #mainNav.navbar-shrink {
+    border-bottom: 1px solid rgba(33, 37, 41, 0.1);
+    background-color: #fff;
+  }
+  #mainNav.navbar-shrink .navbar-brand {
+    color: #F05F40;
+  }
+  #mainNav.navbar-shrink .navbar-brand:focus,
+  #mainNav.navbar-shrink .navbar-brand:hover {
+    color: #f05f40;
+  }
+  #mainNav.navbar-shrink .navbar-nav>li.nav-item>a.nav-link,
+  #mainNav.navbar-shrink .navbar-nav>li.nav-item>a.nav-link:focus {
+    color: #212529;
+  }
+  #mainNav.navbar-shrink .navbar-nav>li.nav-item>a.nav-link:hover,
+  #mainNav.navbar-shrink .navbar-nav>li.nav-item>a.nav-link:focus:hover {
+    color: #F05F40;
+  }
+>>>>>>> 60e2b75c56f35fb4cd61936b124d8844a5f893ab
 }
 header.masthead {
 	padding-top: 10rem;
@@ -285,6 +395,7 @@ header.masthead h1 {
 	background-color: #F05F40;
 	border-color: #F05F40;
 }
+<<<<<<< HEAD
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
 	color: #fff;
 	background-color: #ee4b28 !important;
@@ -292,4 +403,18 @@ header.masthead h1 {
 .btn-primary:active, .btn-primary:focus {
 	-webkit-box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
 	box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
+=======
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  color: #fff;
+  background-color: #ee4b28 !important;
+}
+
+.btn-primary:active,
+.btn-primary:focus {
+  -webkit-box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
+  box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
+>>>>>>> 60e2b75c56f35fb4cd61936b124d8844a5f893ab
 }
