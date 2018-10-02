@@ -3,6 +3,5 @@ TODO:
     4. center the app (tiles and stuff)
     5. change font in the box
     6. make the boxes touching?
-    2. add tempo slider
   back end:
     3. make it work

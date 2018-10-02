@@ -76,5 +76,33 @@ $(document).ready(function () {
 			}
 			selectedTiles.push(selectedTilesInCol);
 		}
+
+		var board = {
+			arr: selectedTiles,
+			tempo: $("#myRange").attr("value")
+		};
+
+		function start(board){
+			num = 0; //Restart
+			let timerId = setInterval(
+				function() {
+					update(board.arr[num])
+				}, (1/board.tempo)*60*1000);
+		}
+		function update (col) {
+			for(row = 0 ; row < col.length; row++){
+				if(col[row] != undefined || col[row].length == 0){
+					var obj = document.createElement("audio");
+					//Set audio data
+					obj.src="audio/wav/"+col[row]+".wav";
+					obj.autoPlay=false;
+					obj.preLoad=true;
+					obj.play();
+				}
+			}
+			num++;
+		}
+
+		start(board);
 	});
 });
