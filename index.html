@@ -12,10 +12,6 @@
 
   <!-- Bootstrap core CSS -->
 
-  <!-- Start: injected by AdGuard -->
-  <script src="//local.adguard.com/adguard-ajax-api/injections/content-script.js?ts=1537903297.563497&amp;sb=0&amp;domain=vfs.cloud9.us-east-2.amazonaws.com&amp;mask=103" type="text/javascript" nonce="C202E044AE1E4FAD9E40BDBABD312A56"></script>
-  <script src="//local.adguard.com/adguard-ajax-api/injections/userscripts/Adguard Assistant?ts=1537318158.441727" type="text/javascript" nonce="C202E044AE1E4FAD9E40BDBABD312A56"></script>
-  <!-- End: injected by AdGuard -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom fonts for this template -->
@@ -38,8 +34,8 @@
     <div class="container">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">Sound Hole</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <span class="navbar-toggler-icon"></span>
+      </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
@@ -73,76 +69,77 @@
   <section class="bg-dark text-white" id="app">
     <div class="container text-center">
       <h2 class="mb-4">Sound Hole</h2>
+
       <table id = "SoundHole">
         <thead>
-          <th id = "column1">1</th>
-          <th id = "column2">2</th>
-          <th id = "column3">3</th>
-          <th id = "column4">4</th>
+          <th id = "column1"></th>
+          <th id = "column2"></th>
+          <th id = "column3"></th>
+          <th id = "column4"></th>
         </thead>
         <tbody>
           <tr id = "row1">
-              <td>
-                <div class = "faces" id = "a1">a1</div>
-              </td>
-              <td>
-                <div class = "faces" id = "a1s">a1s</div>
-              </td>
-              <td>
-                <div class = "faces" id = "b1">b1</div>
-              </td>
-              <td>
-                <div class = "faces" id = "c1">c1</div>
-              </td>
+            <td>
+              <div class = "faces" title = "c1" id = "1_1">C</div>
+            </td>
+            <td>
+              <div class = "faces" title = "c1" id = "1_2">C</div>
+            </td>
+            <td>
+              <div class = "faces" title = "c1" id = "1_3">C</div>
+            </td>
+            <td>
+              <div class = "faces" title = "c1" id = "1_4">C</div>
+            </td>
           </tr>
           <tr id = "row2">
-          <td><div class = "faces" id = "c1s">c1s</div>
-  
-              </td>
-              <td><div class = "faces" id = "c2">c2</div>
-  
-              </td>
-              <td><div class = "faces" id = "d1">d1</div>
-  
-              </td>
-              <td><div class = "faces" id = "d1s">d1s</div>
-  
-              </td>
+            <td><div class = "faces" title = "d1" id = "2_1">D</div>
+
+            </td>
+            <td><div class = "faces" title = "d1" id = "2_2">D</div>
+
+            </td>
+            <td><div class = "faces" title = "d1" id = "2_3">D</div>
+
+            </td>
+            <td><div class = "faces" title = "d1" id = "2_4">D</div>
+
+            </td>
           </tr>
           <tr id = "row3">
-          <td><div class = "faces" id = "e1">e1</div>
-  
-              </td>
-              <td><div class = "faces" id = "f1">f1</div>
-  
-              </td>
-              <td><div class = "faces" id = "f1s">f1s</div>
-  
-              </td>
-              <td><div class = "faces" id = "g1">g1</div>
-  
-              </td>
+            <td><div class = "faces" title = "e1" id = "3_1">E</div>
+
+            </td>
+            <td><div class = "faces" title = "e1" id = "3_2">E</div>
+
+            </td>
+            <td><div class = "faces" title = "e1" id = "3_3">E</div>
+
+            </td>
+            <td><div class = "faces" title = "e1" id = "3_4">E</div>
+
+            </td>
           </tr>
           <tr id = "row4">
-          <td><div class = "faces" id = "g1s">g1s</div>
-  
-              </td>
-              <td><div class = "faces" id = "a1">a1</div>
-  
-              </td>
-              <td><div class = "faces" id = "a1s">a1s</div>
-  
-              </td>
-              <td><div class = "faces" id = "b1">b1</div>
-  
-              </td>
-      </tbody>
-    </table>
+            <td><div class = "faces" title = "f1" id = "4_1">F</div>
+
+            </td>
+            <td><div class = "faces" title = "f1" id = "4_2">F</div>
+
+            </td>
+            <td><div class = "faces" title = "f1" id = "4_3">F</div>
+
+            </td>
+            <td><div class = "faces" title = "f1" id = "4_4">F</div>
+
+            </td>
+          </tbody>
+        </table>
       </div>
       <br />
       <div style="text-align: center;">
-        <a class="btn btn-light btn-xl" href="#app" id = "play">Play</a>
-		  <a class = "btn btn-light btn-xl" href = "#app" id = "save">Save </a>
+        <a class="btn btn-primary btn-xl" id = "save">Save </a>
+        <a class="btn btn-primary btn-xl" id = "play">Play</a>
       </div>
     </div>
   </section>
@@ -233,8 +230,8 @@
 
   <!-- Custom scripts for this template -->
   <script src="js/creative.min.js"></script>
-	<script src= "js/musicapp.js"></script>
-	<script src = "js/timing.js"></script>
+  <script src= "js/musicapp.js"></script>
+  <script src = "js/timing.js"></script>
 
 </body>
 

@@ -1,0 +1,7 @@
+TODO:
+  front end:
+    center the app (tiles and stuff)
+    change font in the box
+    make the boxes touching?
+  back end:
+    make it work

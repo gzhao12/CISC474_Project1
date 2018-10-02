@@ -48,7 +48,7 @@ function update (col) {
 		//if(num >= arr[row].length+1)
 			//clearInterval(timerId);
 	}
-	num++;	
+	num++;
 }
 	/*var obj = document.createElement("audio");
 	var obj2 = document.createElement("audio");
@@ -66,12 +66,3 @@ function update (col) {
 	//Stop at end of arrays
 	if(num >= arr[0].length && num >= arr[1].length)
 		clearInterval(timerId);*/
-
-$(document).ready(function () {
-
-	$("#play").click(function () {
-		
-		start(boardSample);
-
-	});
-});
