@@ -14,9 +14,25 @@ $(document).ready(function () {
 	var boardArr = [];
 
 	for (var counter1 = 0; counter1 < 8; counter1++) {
-		boardArr[counter1] = [];
 		for (var counter2 = 0; counter2 < 8; counter2++) {
-			boardArr[counter1][counter2] = new Tile('something', false);
+			switch(counter1) {
+				case 0:
+					boardArr[counter1][counter2] = new Tile('audio/c1.wav', false);
+				case 1:
+					boardArr[counter1][counter2] = new Tile('audio/d1.wav', false);
+				case 2:
+					boardArr[counter1][counter2] = new Tile('audio/e1.wav', false);
+				case 3:
+					boardArr[counter1][counter2] = new Tile('audio/f1.wav', false);
+				case 4:
+					boardArr[counter1][counter2] = new Tile('audio/g1.wav', false);
+				case 5:
+					boardArr[counter1][counter2] = new Tile('audio/a1.wav', false);
+				case 6:
+					boardArr[counter1][counter2] = new Tile('audio/b1.wav', false);
+				case 7:
+					boardArr[counter1][counter2] = new Tile('audio/c2.wav', false);
+			}
 		}
 	}
 });
