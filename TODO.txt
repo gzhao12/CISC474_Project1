@@ -1,9 +1,9 @@
 TODO:
   front end:
-    center the app (tiles and stuff)
-    change font in the box
-    make the boxes touching?
+    4. center the app (tiles and stuff)
+    5. change font in the box
+    6. make the boxes touching?
+    2. add tempo slider
   back end:
-    redo isClicked because it doesn't work when you click on multiple blank tiles or when you click multiple full tiles or in a lot of other situations
-    do we need to add an array containing "" or can we just check if NULL?
-    make it work
+    1. redo isClicked because it doesn't work when you click on multiple blank tiles or when you click multiple full tiles or in a lot of other situations
+    3. make it work

@@ -51,9 +51,50 @@ table {
 	cursor: pointer;
 	border-radius: 2px;
 }
+
 .faces:hover {
 	background-color: white;
 	color: black;
+}
+
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 25%;
+    height: 15px;
+    border-radius: 5px;
+    background: white;
+    outline: none;
+    opacity: 1;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+		margin-top: 10px;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #F05F40;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #F05F40;
+    cursor: pointer;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+    background: #00C5FF;
 }
 
 .bg-primary {

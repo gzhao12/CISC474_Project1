@@ -1,6 +1,13 @@
 $(document).ready(function () {
 	var isClicked = false;
+	var slider = $("myRange");
+	var output = $("demo");
+	output.innerHTML = slider.value; // Display the default slider value
 
+	// Update the current slider value (each time you drag the slider handle)
+	slider.oninput = function() {
+	    output.innerHTML = this.value;
+	}
 	//download function
 	$("#save").click(function(/*passed_object*/) {
 		var fileprefix = prompt ("Please name the file");
@@ -56,9 +63,6 @@ $(document).ready(function () {
 			for (var rowCounter = 1; rowCounter < 5; rowCounter++) {
 				if ($("#" + rowCounter + "_" + colCounter).css("background-color") == "rgb(223, 82, 70)")
 					selectedTilesInCol.push($("#" + rowCounter + "_" + colCounter).attr("title"));
-			}
-			if (selectedTilesInCol.length == 0) {
-				selectedTilesInCol.push("");
 			}
 			selectedTiles.push(selectedTilesInCol);
 		}
