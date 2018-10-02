@@ -1,61 +1,54 @@
 $(document).ready(function () {
-	//class declaration of Tile
-	function Tile (filePath, isSelected) {
-		this.filePath = filePath;
-		this.isSelected = isSelected;
-	}
-	//class declaration of Board
-	function Board (arr) {
-		this.arr = arr;
-		this.tempo = 100;
-		this.getArrIndex = function(row, col) {
-			return this.arr[row][col];
-		}
-	}
+	var flagClicked = 0;
 
-	//initializes the board
-	var boardArr = [];
 
-	for (var counter1 = 0; counter1 < 8; counter1++) {
-		for (var counter2 = 0; counter2 < 8; counter2++) {
-			switch(counter1) {
-				case 0:
-					boardArr[counter1][counter2] = new Tile('audio/wav/c1.wav', false);
-				case 1:
-					boardArr[counter1][counter2] = new Tile('audio/wav/d1.wav', false);
-				case 2:
-					boardArr[counter1][counter2] = new Tile('audio/wav/e1.wav', false);
-				case 3:
-					boardArr[counter1][counter2] = new Tile('audio/wav/f1.wav', false);
-				case 4:
-					boardArr[counter1][counter2] = new Tile('audio/wav/g1.wav', false);
-				case 5:
-					boardArr[counter1][counter2] = new Tile('audio/wav/a1.wav', false);
-				case 6:
-					boardArr[counter1][counter2] = new Tile('audio/wav/b1.wav', false);
-				case 7:
-					boardArr[counter1][counter2] = new Tile('audio/wav/c2.wav', false);
-			}
-		}
-	}
-
-	board = new Board(boardArr)
 
 	$(".faces").click(function () {
-
+		alert(this.id);
+		
 		var obj = document.createElement("audio");
-				obj.src="audio/wav/"+this.id+".wav";
-				obj.autoPlay=false;
-				obj.preLoad=true;
-
-		if (flag == 0) {
-			$(this).css("background-color", "#DF5246");
-			obj.play();
-			flag = 1;
-		} else if (flag == 1) {
-			$(this).css("background-color", "#00C5FF");
-			flag = 0;
-		}
+        obj.src="audio/wav/"+this.id+".wav";
+        obj.autoPlay=false;
+        obj.preLoad=true;
+        
+			if (flagClicked == 0) {
+				$(this).css("background-color", "#DF5246");
+				obj.play();
+				flagClicked = 1;
+			} else if (flagClicked == 1) {
+				$(this).css("background-color", "#00C5FF");
+				obj.play()
+				flagClicked = 0;
+			}
 
 	});
+	
+	//download function
+	$("#save").click(function(/*passed_object*/) {
+	var fileprefix = prompt ("Please name the file");
+	var filesuffix = ".txt";
+	var filename = fileprefix.concat(filesuffix);
+	var passed_object = new Array (1,2,3,4);
+	var saveJSON = JSON.stringify(passed_object);
+	var textFileAsBlob = new Blob([saveJSON], {type:'text/plain'});
+   var downloadLink = document.createElement("a");
+   downloadLink.download = filename;
+   downloadLink.innerHTML = "Download File";
+   if (window.webkitURL != null)
+   	{
+        downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+    	}
+  	else
+   	{
+        downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+        downloadLink.onclick = destroyClickedElement;
+        downloadLink.style.display = "none";
+        document.body.appendChild(downloadLink);
+    	}
+
+    downloadLink.click();
+
+});
+
+
 });
