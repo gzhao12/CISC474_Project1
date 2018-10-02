@@ -29,34 +29,38 @@ $(document).ready(function () {
 	});
 
 	$(".faces").click(function () {
-		alert(this.id);
-
 		var obj = document.createElement("audio");
-				obj.src="audio/wav/"+this.id+".wav";
+				obj.src="audio/wav/"+$(this).attr("title")+".wav";
 				obj.autoPlay=false;
 				obj.preLoad=true;
 
 			if (isClicked == false) {
 				$(this).css("background-color", "#DF5246");
 				obj.play();
-				isClicked = 1;
+				isClicked = true;
 			} else if (isClicked == true) {
 				$(this).css("background-color", "#00C5FF");
 				obj.play()
-				isClicked = 0;
+				isClicked = false;
 			}
 
 	});
 
+// rgb(223, 82, 70) = selected
+// rgb(0, 197, 255) = not selected
 	$("#play").click(function() {
 		var selectedTiles = [];
 
-		console.log($("#1_1").attr("title"));
-		// 	for(var rowCounter = 1; rowCounter < 5; rowCounter++) {
-		// 		for(var colCounter = 1; colCounter < 5; colCounter++) {
-		// 			// switch colCounter for each type, load into selectedTiles array
-		//
-		// 		}
-		// 	}
+		for (var colCounter = 1; colCounter < 5; colCounter++) {
+			var selectedTilesInCol = [];
+			for (var rowCounter = 1; rowCounter < 5; rowCounter++) {
+				if ($("#" + rowCounter + "_" + colCounter).css("background-color") == "rgb(223, 82, 70)")
+					selectedTilesInCol.push($("#" + rowCounter + "_" + colCounter).attr("title"));
+			}
+			if (selectedTilesInCol.length == 0) {
+				selectedTilesInCol.push("");
+			}
+			selectedTiles.push(selectedTilesInCol);
+		}
 	});
 });

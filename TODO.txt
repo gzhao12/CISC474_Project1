@@ -4,4 +4,6 @@ TODO:
     change font in the box
     make the boxes touching?
   back end:
+    redo isClicked because it doesn't work when you click on multiple blank tiles or when you click multiple full tiles or in a lot of other situations
+    do we need to add an array containing "" or can we just check if NULL?
     make it work

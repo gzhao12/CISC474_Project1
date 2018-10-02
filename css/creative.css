@@ -50,7 +50,6 @@ table {
 	display: inherit;
 	cursor: pointer;
 	border-radius: 2px;
-
 }
 .faces:hover {
 	background-color: white;
