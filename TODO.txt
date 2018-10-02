@@ -5,5 +5,4 @@ TODO:
     6. make the boxes touching?
     2. add tempo slider
   back end:
-    1. redo isClicked because it doesn't work when you click on multiple blank tiles or when you click multiple full tiles or in a lot of other situations
     3. make it work

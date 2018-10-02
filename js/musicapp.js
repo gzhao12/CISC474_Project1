@@ -1,5 +1,4 @@
 $(document).ready(function () {
-	var isClicked = false;
 	var slider = $("myRange");
 	var output = $("demo");
 	output.innerHTML = slider.value; // Display the default slider value
@@ -41,16 +40,27 @@ $(document).ready(function () {
 				obj.autoPlay=false;
 				obj.preLoad=true;
 
-			if (isClicked == false) {
-				$(this).css("background-color", "#DF5246");
+			if ($(this).css("background-color") == "rgb(255, 255, 255)") {
+				$(this).css("background-color", "#DF5246").hover(
+					function() {
+						$(this).css("background-color", "#00C5FF");
+					},
+					function() {
+						$(this).css("background-color", "#DF5246")
+					}
+				);
 				obj.play();
-				isClicked = true;
-			} else if (isClicked == true) {
-				$(this).css("background-color", "#00C5FF");
+			} else {
+				$(this).css("background-color", "#00C5FF").hover(
+					function() {
+						$(this).css("background-color", "white");
+					},
+					function() {
+						$(this).css("background-color", "#00C5FF")
+					}
+				);
 				obj.play()
-				isClicked = false;
 			}
-
 	});
 
 // rgb(223, 82, 70) = selected
