@@ -30,35 +30,34 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
-.faces {
-	width: 120px;
-	height: 40px;
-	border: 20px medium #FFFFFF;
-	background-color: #00C5FF;
-	margin-top: 20px;
-	display: inline-block;
-	transition-duration: 0.4s;
-	cursor: pointer;
-	-webkit-border-radius: 40;
-	-moz-border-radius: 40;
-	border-radius: 40px;
-}
 
-.faces:hover {
+table {
+        width: 100%;
+    }
+
+    .width-20 td {
+        width: 20%;
+    }
+
+    .width-25 td {
+        width: 25%;
+    }
+
+	.faces {
+	width: 240px;
+	height: 80px;
+	background-color: #00C5FF;
+	display: inherit;
+	cursor: pointer;
+	border-radius: 2px;
+	
+	}
+
+	.faces:hover {
 	background-color: white;
 	color: black;
-}
-.grid-container {
-	display: grid;
-	grid-template-columns: auto auto;
-	padding: 5px;
-}
-.grid-item {
-	border: solid #282828;
-	padding: 20px;
-	font-size: 30px;
-	text-align: center;
-}
+	}
+
 
 .bg-primary {
 	background-color: #F05F40 !important;
@@ -98,6 +97,7 @@ img::selection {
  color: #fff;
  background: transparent;
 }
+
 #mainNav {
 	border-bottom: 1px solid rgba(33, 37, 41, 0.1);
 	background-color: #fff;

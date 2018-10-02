@@ -73,27 +73,76 @@
   <section class="bg-dark text-white" id="app">
     <div class="container text-center">
       <h2 class="mb-4">Sound Hole</h2>
-      <div class="grid-container">
-        <div class="grid-item">
-          <div class="faces" id="c1"></div>
-          </a>
-        </div>
-        <div class="grid-item">
-          <div class="faces" id="c2"></div>
-          </a>
-        </div>
-        <div class="grid-item">
-          <div class="faces"></div>
-          </a>
-        </div>
-        <div class="grid-item">
-          <div class="faces"></div>
-          </a>
-        </div>
+      <table id = "SoundHole">
+        <thead>
+          <th id = "column1">1</th>
+          <th id = "column2">2</th>
+          <th id = "column3">3</th>
+          <th id = "column4">4</th>
+        </thead>
+        <tbody>
+          <tr id = "row1">
+              <td>
+                <div class = "faces" id = "a1">a1</div>
+              </td>
+              <td>
+                <div class = "faces" id = "a1s">a1s</div>
+              </td>
+              <td>
+                <div class = "faces" id = "b1">b1</div>
+              </td>
+              <td>
+                <div class = "faces" id = "c1">c1</div>
+              </td>
+          </tr>
+          <tr id = "row2">
+          <td><div class = "faces" id = "c1s">c1s</div>
+  
+              </td>
+              <td><div class = "faces" id = "c2">c2</div>
+  
+              </td>
+              <td><div class = "faces" id = "d1">d1</div>
+  
+              </td>
+              <td><div class = "faces" id = "d1s">d1s</div>
+  
+              </td>
+          </tr>
+          <tr id = "row3">
+          <td><div class = "faces" id = "e1">e1</div>
+  
+              </td>
+              <td><div class = "faces" id = "f1">f1</div>
+  
+              </td>
+              <td><div class = "faces" id = "f1s">f1s</div>
+  
+              </td>
+              <td><div class = "faces" id = "g1">g1</div>
+  
+              </td>
+          </tr>
+          <tr id = "row4">
+          <td><div class = "faces" id = "g1s">g1s</div>
+  
+              </td>
+              <td><div class = "faces" id = "a1">a1</div>
+  
+              </td>
+              <td><div class = "faces" id = "a1s">a1s</div>
+  
+              </td>
+              <td><div class = "faces" id = "b1">b1</div>
+  
+              </td>
+      </tbody>
+    </table>
       </div>
       <br />
-
-      <a class="btn btn-light btn-xl sr-button" href="#app">Play</a>
+      <div style="text-align: center;">
+        <a class="btn btn-light btn-xl js-scroll-trigger" href="#app">Play</a>
+      </div>
     </div>
   </section>
 
