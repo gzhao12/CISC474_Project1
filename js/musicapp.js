@@ -1,3 +1,5 @@
+var timerId; //Must be global. If moved into play, several versions 
+			//if timerId may exist if pressing playing more than once at a time
 $(document).ready(function () {
 	var slider = $("myRange");
 	var output = $("demo");
@@ -67,7 +69,7 @@ $(document).ready(function () {
 // rgb(0, 197, 255) = not selected
 	$("#play").click(function() {
 		var selectedTiles = [];
-
+		
 		for (var colCounter = 1; colCounter < 5; colCounter++) {
 			var selectedTilesInCol = [];
 			for (var rowCounter = 1; rowCounter < 5; rowCounter++) {
@@ -83,26 +85,31 @@ $(document).ready(function () {
 		};
 
 		function start(board){
-			num = 0; //Restart
-			let timerId = setInterval(
-				function() {
-					update(board.arr[num])
-				}, (1/board.tempo)*60*1000);
+			num = 0; //Restart the index
+			clearInterval(timerId); //Restart the metronome
+			//Play each column of notes at the given tempo
+			timerId = setInterval(function() {update(board.arr[num])},
+				(1/board.tempo)*60*1000);
 		}
 		function update (col) {
+			//Iterate through each note in the column
 			for(row = 0 ; row < col.length; row++){
+				//Check if there are any notes at the given index
 				if(col[row] != undefined || col[row].length == 0){
 					var obj = document.createElement("audio");
-					//Set audio data
+					//Set audio data and play
 					obj.src="audio/wav/"+col[row]+".wav";
 					obj.autoPlay=false;
 					obj.preLoad=true;
 					obj.play();
 				}
 			}
-			num++;
+			num++; //Increment the beat by 1
+			//If at the end, stop the metronomme.
+			if(num >= board.arr.length)
+				clearInterval(timerId);
 		}
 
-		start(board);
+		start(board); //Start playing when play begins
 	});
 });
