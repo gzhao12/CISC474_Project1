@@ -19,6 +19,7 @@
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 
+
   <!-- Plugin CSS -->
   <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
@@ -34,8 +35,8 @@
     <div class="container">
       <a class="navbar-brand js-scroll-trigger" href="#page-top">Sound Hole</a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <span class="navbar-toggler-icon"></span>
+      </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
@@ -69,27 +70,85 @@
   <section class="bg-dark text-white" id="app">
     <div class="container text-center">
       <h2 class="mb-4">Sound Hole</h2>
-      <div class="grid-container">
-        <div class="grid-item">
-          <div class="faces" id="c1"></div>
-          </a>
-        </div>
-        <div class="grid-item">
-          <div class="faces" id="c2"></div>
-          </a>
-        </div>
-        <div class="grid-item">
-          <div class="faces"></div>
-          </a>
-        </div>
-        <div class="grid-item">
-          <div class="faces"></div>
-          </a>
-        </div>
+
+      <table id = "SoundHole">
+        <thead>
+          <th id = "column1"></th>
+          <th id = "column2"></th>
+          <th id = "column3"></th>
+          <th id = "column4"></th>
+        </thead>
+        <tbody>
+          <tr id = "row1">
+            <td>
+              <div class = "faces" title = "c1" id = "1_1">C</div>
+            </td>
+            <td>
+              <div class = "faces" title = "c1" id = "1_2">C</div>
+            </td>
+            <td>
+              <div class = "faces" title = "c1" id = "1_3">C</div>
+            </td>
+            <td>
+              <div class = "faces" title = "c1" id = "1_4">C</div>
+            </td>
+          </tr>
+          <tr id = "row2">
+            <td><div class = "faces" title = "d1" id = "2_1">D</div>
+
+            </td>
+            <td><div class = "faces" title = "d1" id = "2_2">D</div>
+
+            </td>
+            <td><div class = "faces" title = "d1" id = "2_3">D</div>
+
+            </td>
+            <td><div class = "faces" title = "d1" id = "2_4">D</div>
+
+            </td>
+          </tr>
+          <tr id = "row3">
+            <td><div class = "faces" title = "e1" id = "3_1">E</div>
+
+            </td>
+            <td><div class = "faces" title = "e1" id = "3_2">E</div>
+
+            </td>
+            <td><div class = "faces" title = "e1" id = "3_3">E</div>
+
+            </td>
+            <td><div class = "faces" title = "e1" id = "3_4">E</div>
+
+            </td>
+          </tr>
+          <tr id = "row4">
+            <td><div class = "faces" title = "f1" id = "4_1">F</div>
+
+            </td>
+            <td><div class = "faces" title = "f1" id = "4_2">F</div>
+
+            </td>
+            <td><div class = "faces" title = "f1" id = "4_3">F</div>
+
+            </td>
+            <td><div class = "faces" title = "f1" id = "4_4">F</div>
+
+            </td>
+          </tbody>
+        </table>
       </div>
       <br />
-
-      <a class="btn btn-light btn-xl sr-button" href="#app">Play</a>
+      <div style="text-align: center;">
+        <a class="btn btn-primary btn-xl" id = "save">Save </a>
+        <a class="btn btn-primary btn-xl" id = "play">Play</a>
+        <a class="btn btn-primary btn-xl" id = "stop">Stop</a>
+        <br />
+        <f class="text-faded mb-4"> Tempo </p>
+        <div class="slidecontainer">
+          <input type="range" min="50" max="150" value="100" class="slider" id="myRange">
+          <p>BPM: <span id="demo"></span></p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -178,8 +237,8 @@
   <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
   <!-- Custom scripts for this template -->
-  <script src="js/creative.min.js"></script>
-	<script src= "js/musicapp.js"></script>
+  <script src="js/creative.js"></script>
+  <script src= "js/musicapp.js"></script>
 
 </body>
 
