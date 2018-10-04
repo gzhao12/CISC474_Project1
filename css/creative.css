@@ -32,6 +32,13 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
 }
 
+f {
+	color: #F05F40;
+	font-family: 'Open Sans';
+	transition: all 0.2s;
+	font-size: 1.2581762631625rem;
+}
+
 table {
 	width: 100%;
 }
@@ -51,13 +58,11 @@ table {
 	display: inherit;
 	cursor: pointer;
 	border-radius: 2px;
-	font-family: 'Helvetica Neue';
+	font-family: 'Open Sans';
 	line-height: 80px;
 	text-align: center;
 	font-size: x-large;
 	padding: 10px;
-  
-
 }
 
 .faces:hover {
@@ -79,7 +84,6 @@ table {
     opacity: 1;
     -webkit-transition: .2s;
     transition: opacity .2s;
-		margin-top: 10px;
 }
 
 .slider::-webkit-slider-thumb {
@@ -88,7 +92,7 @@ table {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background: #F05F40;
+    background: #00C5FF;
     cursor: pointer;
 }
 
@@ -96,13 +100,13 @@ table {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background: #F05F40;
+    background: #00C5FF;
     cursor: pointer;
 }
 
 /* Mouse-over effects */
 .slider:hover {
-    background: #00C5FF;
+    background: #DF5246;
 }
 
 .bg-primary {
@@ -348,6 +352,16 @@ img::-moz-selection {
 	.btn-primary {
 		background-color: #F05F40;
 		border-color: #F05F40;
+	}
+
+	.btn-play {
+		background-color: #F05F40;
+		border-color: #F05F40;
+	}
+
+	.btn-stop {
+		background-color: #a83b32;
+		border-color: #a83b32;
 	}
 
 	.btn-primary:hover, .btn-primary:focus, .btn-primary:active {

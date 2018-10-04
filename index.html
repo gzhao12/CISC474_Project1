@@ -141,9 +141,12 @@
       <div style="text-align: center;">
         <a class="btn btn-primary btn-xl" id = "save">Save </a>
         <a class="btn btn-primary btn-xl" id = "play">Play</a>
+        <a class="btn btn-primary btn-xl" id = "stop">Stop</a>
         <br />
+        <f class="text-faded mb-4"> Tempo </p>
         <div class="slidecontainer">
-          <input type="range" min="100" max="150" value="125" class="slider" id="myRange">
+          <input type="range" min="50" max="150" value="100" class="slider" id="myRange">
+          <p>BPM: <span id="demo"></span></p>
         </div>
       </div>
     </div>
@@ -236,7 +239,6 @@
   <!-- Custom scripts for this template -->
   <script src="js/creative.js"></script>
   <script src= "js/musicapp.js"></script>
-  <script src = "js/timing.js"></script>
 
 </body>
 
