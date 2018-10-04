@@ -8,12 +8,21 @@ $(document).ready(function () {
 	    output.innerHTML = this.value;
 	}
 	//download function
-	$("#save").click(function(/*passed_object*/) {
+	$("#save").click(function() {
+		var selectedTiles = [];
+
+		for (var colCounter = 1; colCounter < 5; colCounter++) {
+			var selectedTilesInCol = [];
+			for (var rowCounter = 1; rowCounter < 5; rowCounter++) {
+				if ($("#" + rowCounter + "_" + colCounter).css("background-color") == "rgb(223, 82, 70)")
+					selectedTilesInCol.push($("#" + rowCounter + "_" + colCounter).attr("title"));
+			}
+			selectedTiles.push(selectedTilesInCol);
+		}
 		var fileprefix = prompt ("Please name the file");
 		var filesuffix = ".txt";
 		var filename = fileprefix.concat(filesuffix);
-		var passed_object = new Array (1,2,3,4);
-		var saveJSON = JSON.stringify(passed_object);
+		var saveJSON = JSON.stringify(selectedTiles);
 		var textFileAsBlob = new Blob([saveJSON], {type:'text/plain'});
 		var downloadLink = document.createElement("a");
 		downloadLink.download = filename;
