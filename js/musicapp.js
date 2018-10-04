@@ -1,37 +1,108 @@
-function getCell(column, row) {
-    var column = $('#' + column).index();
-    var row = $('#' + row)
-    return row.find('td').eq(column);
-}
-
 $(document).ready(function () {
-	var flagClicked = 0;
+	var slider = $("myRange");
+	var output = $("demo");
+	output.innerHTML = slider.value; // Display the default slider value
 
+	// Update the current slider value (each time you drag the slider handle)
+	slider.oninput = function() {
+	    output.innerHTML = this.value;
+	}
+	//download function
+	$("#save").click(function(/*passed_object*/) {
+		var fileprefix = prompt ("Please name the file");
+		var filesuffix = ".txt";
+		var filename = fileprefix.concat(filesuffix);
+		var passed_object = new Array (1,2,3,4);
+		var saveJSON = JSON.stringify(passed_object);
+		var textFileAsBlob = new Blob([saveJSON], {type:'text/plain'});
+		var downloadLink = document.createElement("a");
+		downloadLink.download = filename;
+		downloadLink.innerHTML = "Download File";
+		if (window.webkitURL != null)
+		{
+			downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+		}
+		else
+		{
+			downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+			downloadLink.onclick = destroyClickedElement;
+			downloadLink.style.display = "none";
+			document.body.appendChild(downloadLink);
+		}
 
-
-	$(".faces").click(function () {
-		
-		var column = $('#column2').index();
-		//alert(column);
-		var cell = $('#row4').find('td').eq(column);
-		//alert(cell.html());
-		
-		var obj = document.createElement("audio");
-        obj.src="audio/wav/"+this.id+".wav";
-        obj.autoPlay=false;
-        obj.preLoad=true;
-        
-			if (flagClicked == 0) {
-				$(this).css("background-color", "#DF5246");
-				obj.play();
-				flagClicked = 1;
-			} else if (flagClicked == 1) {
-				$(this).css("background-color", "#00C5FF");
-				obj.play()
-				flagClicked = 0;
-			}
+		downloadLink.click();
 
 	});
 
+	$(".faces").click(function () {
+		var obj = document.createElement("audio");
+				obj.src="audio/wav/"+$(this).attr("title")+".wav";
+				obj.autoPlay=false;
+				obj.preLoad=true;
 
+			if ($(this).css("background-color") == "rgb(255, 255, 255)") {
+				$(this).css("background-color", "#DF5246").hover(
+					function() {
+						$(this).css("background-color", "#00C5FF");
+					},
+					function() {
+						$(this).css("background-color", "#DF5246")
+					}
+				);
+				obj.play();
+			} else {
+				$(this).css("background-color", "#00C5FF").hover(
+					function() {
+						$(this).css("background-color", "white");
+					},
+					function() {
+						$(this).css("background-color", "#00C5FF")
+					}
+				);
+				obj.play()
+			}
+	});
+
+// rgb(223, 82, 70) = selected
+// rgb(0, 197, 255) = not selected
+	$("#play").click(function() {
+		var selectedTiles = [];
+
+		for (var colCounter = 1; colCounter < 5; colCounter++) {
+			var selectedTilesInCol = [];
+			for (var rowCounter = 1; rowCounter < 5; rowCounter++) {
+				if ($("#" + rowCounter + "_" + colCounter).css("background-color") == "rgb(223, 82, 70)")
+					selectedTilesInCol.push($("#" + rowCounter + "_" + colCounter).attr("title"));
+			}
+			selectedTiles.push(selectedTilesInCol);
+		}
+
+		var board = {
+			arr: selectedTiles,
+			tempo: $("#myRange").attr("value")
+		};
+
+		function start(board){
+			num = 0; //Restart
+			let timerId = setInterval(
+				function() {
+					update(board.arr[num])
+				}, (1/board.tempo)*60*1000);
+		}
+		function update (col) {
+			for(row = 0 ; row < col.length; row++){
+				if(col[row] != undefined || col[row].length == 0){
+					var obj = document.createElement("audio");
+					//Set audio data
+					obj.src="audio/wav/"+col[row]+".wav";
+					obj.autoPlay=false;
+					obj.preLoad=true;
+					obj.play();
+				}
+			}
+			num++;
+		}
+
+		start(board);
+	});
 });
